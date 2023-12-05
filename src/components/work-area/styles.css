@@ -1,0 +1,16 @@
+.label-allign {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: x-large;
+}
+.input-field-allign {
+  display: flex;
+}
+.gender-label {
+  display: flex;
+  justify-content: center;
+}
+
+.address-height-adjust {
+}
