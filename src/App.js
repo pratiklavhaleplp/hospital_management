@@ -3,6 +3,8 @@ import './App.css';
 import { RibbonComponent, RibbonTabsDirective, RibbonTabDirective, RibbonCollectionsDirective, RibbonCollectionDirective, RibbonGroupsDirective, RibbonGroupDirective, RibbonItemsDirective, RibbonItemDirective } from "@syncfusion/ej2-react-ribbon";
 import PatientRegistration from './components/patient-registration/patient-registration';
 import PatientSearch from './components/patient-search/PatientSearch';
+import VisionAssesment from './components/optometrist-form/VisionAssesment';
+import UnderConstruction from './components/under-construction/UnderConstruction';
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
@@ -12,13 +14,16 @@ function App() {
     const tab = tabSeleted;
     switch (tab) {
       case 'patient_registration':
-        console.log('tesitng')
-        navigate('/patient-registration')
+        navigate('/patient-registration');
         break;
       case 'patient_search':
-        navigate('/patient-search')
+        navigate('/patient-search');
         break;
-      default: console.log('nothing is selected...')
+      case 'vision_assesment':
+        navigate('/vision-assesment');
+        break;
+      default:
+        navigate('/under-construction');
         break;
     }
   }
@@ -93,7 +98,10 @@ function App() {
       </RibbonComponent>
       <Routes>
         <Route path="/patient-registration" element={<PatientRegistration />}></Route>
+        <Route path="/" element={<PatientRegistration />}></Route>
         <Route path="/patient-search" element={<PatientSearch />}></Route>
+        <Route path="/vision-assesment" element={<VisionAssesment />}></Route>
+        <Route path="/under-construction" element={<UnderConstruction />}></Route>
       </Routes>
     </>
   );
